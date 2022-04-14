@@ -1,4 +1,5 @@
 import streamlit
+import snowflake.connector
 
 streamlit.title('You are cordially invited to the Private Snowflake Exchange ACME-ADU')
 
