@@ -12,10 +12,10 @@ st.image(current_region_function)
 
 my_region = st.selectbox(
      'What REGION do you see if you run the CURRENT_REGION function?',
-     ('<pick one>','AWS_CA_CENTRAL_1', 'Something other region.'))
+     ('<pick one>','AWS_CA_CENTRAL_1', 'Some other region.', 'Azure Canada Central'))
 
 if st.button('Submit My Region'):
-     if my_region == 'AWS_CA_CENTRAL':
+     if my_region == 'AWS_CA_CENTRAL_1':
         st.write(my_region)
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
