@@ -19,8 +19,8 @@ if st.button('Submit My Region'):
         st.write(my_region)
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
- else:
-     st.write('Goodbye')
+else:
+     st.write('Please enter your Region')
 
 current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 st.image(current_account_function)
