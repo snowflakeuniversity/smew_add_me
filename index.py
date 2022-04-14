@@ -10,10 +10,10 @@ conn = init_connection()
 def add_locator(query):
     with conn.cursor() as cur:
         try:
-            cur.execute(query)
+            result=cur.execute(query)
         except URLError as e:
             st.error()
-        return cur.fetchall()
+        return result
 
 def build_command(my_account_locator):
     alter_command=('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
