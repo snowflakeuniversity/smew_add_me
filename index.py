@@ -13,7 +13,7 @@ def add_locator(query):
         return cur.fetchall()
 
 def build_command(my_account_locator):
-    alter_command=("ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1." + my_account_locator)
+    alter_command=('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
     return alter_command
 
 st.title('You are cordially invited to...')
