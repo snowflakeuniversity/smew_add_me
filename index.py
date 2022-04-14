@@ -33,15 +33,23 @@ if st.button('Submit My Region'):
         current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
         st.image(current_account_function)
         my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
-        st.write('Your Account Locator is ', my_account_locator)    
-        if st.button('Add My Account to the Private Exchange'):
-          build_command(my_account_locator)
-        else:
-          st.write()
+      
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
 else:
      st.write()
 
+  
+current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
+st.image(current_account_function)
+
+my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
+
+st.write('Your Account Locator is ', my_account_locator)    
+
+if st.button('Add My Account to the Private Exchange'):
+     build_command(my_account_locator)
+else:
+     st.write()
 st.write(alter_command)
 
