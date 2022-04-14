@@ -11,7 +11,7 @@ def add_locator(query):
         cur.execute(query)
         return cur.fetchall()
 
-def build_command(my_account_locator)
+def build_command(my_account_locator):
     alter_command=("ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1." + my_account_locator)
     return alter_command
 
