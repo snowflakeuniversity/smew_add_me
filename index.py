@@ -11,6 +11,9 @@ def add_locator(query):
         cur.execute(query)
         return cur.fetchall()
 
+def build_command(my_account_locator)
+    alter_command=("ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1." + my_account_locator)
+    return alter_command
 
 st.title('You are cordially invited to...')
 st.header('The ACME-ADU Private Exchange')
@@ -31,9 +34,7 @@ if st.button('Submit My Region'):
         my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
         st.write('Your Account Locator is ', my_account_locator)    
         if st.button('Add My Account to the Private Exchange'):
-          add_me =("ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1." + my_account_locator)
-          snowflake_response=add_locator(add_me)
-          st.write(snowflake_response)
+          build_command(my_account_locator)
         else:
           st.write()
      else: 
@@ -41,5 +42,5 @@ if st.button('Submit My Region'):
 else:
      st.write()
 
-
+st.write(alter_command)
 
