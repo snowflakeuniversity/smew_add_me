@@ -12,7 +12,7 @@ def snowflake_command(my_command):
     try:
       result=my_cur.execute(my_command)
     except:
-      st.write('Are you certain you entered you account locator correctly?)
+      st.write('Are you certain you entered you account locator correctly?')
     return 
 
 st.title('You are cordially invited to...')
