@@ -9,7 +9,10 @@ conn = init_connection()
 
 def add_locator(query):
     with conn.cursor() as cur:
-        cur.execute(query)
+        try:
+            cur.execute(query)
+        except URLError as e:
+            st.error()
         return cur.fetchall()
 
 def build_command(my_account_locator):
