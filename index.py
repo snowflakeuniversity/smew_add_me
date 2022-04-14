@@ -11,8 +11,10 @@ def snowflake_command(my_command):
     my_cur = my_cnx.cursor()
     try:
       result=my_cur.execute(my_command)
+      st.markdown('It seems to have worked. Check Snowflake under Data->Private Sharing to see if the ACME-ADU listings appear.')
     except:
       st.write('Are you certain you entered you account locator correctly?')
+      st.write('And, are you certain your account is on the AWS cloud, in the Central Canada region?')
     return 
 
 st.title('You are cordially invited to...')
@@ -33,11 +35,10 @@ my_account_locator = st.text_input('What result do you get if you run the CURREN
 
 st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
-if st.button('Looks Good - Add Me'):
+if st.button('Add My Account to the ACME-ADU Exchange'):
      try:
         command_to_add_account = ('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
         my_result=snowflake_command(command_to_add_account)   
-        st.write(my_result)
      except URLError as e:
         st.error()
 else:
