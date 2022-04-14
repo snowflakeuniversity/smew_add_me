@@ -1,6 +1,7 @@
 import streamlit as st
 import snowflake.connector 
 
+alter_command ='You have not added your Account Locator, yet'
 def init_connection():
     return snowflake.connector.connect(**st.secrets["snowflake"])
 
