@@ -37,8 +37,8 @@ my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOU
 st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
 if st.button('Looks Good - Add Me'):
-     build_command(my_account_locator)
-     st.write('COMMAND: '+ alter_command)
+     what_ran=build_command(my_account_locator)
+     st.write('COMMAND: '+ what_ran)
 else:
      st.write()
 
