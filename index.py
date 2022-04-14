@@ -39,7 +39,7 @@ st.stop()
 
 if st.button('Add My Account to the ACME-ADU Exchange'):
      try:
-        command_to_add_account = ('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
+        command_to_add_account = ('' + my_account_locator)
         my_result=snowflake_command(command_to_add_account)   
      except URLError as e:
         st.error()
