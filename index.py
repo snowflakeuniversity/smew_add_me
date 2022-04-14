@@ -38,7 +38,8 @@ st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.
 
 if st.button('Looks Good - Add Me'):
      what_ran=build_command(my_account_locator)
-     st.write('COMMAND: '+ what_ran)
+     what_really_ran=add_locator(what_ran)   
+     st.write('COMMAND: '+ what_really_ran)
 else:
      st.write()
 
