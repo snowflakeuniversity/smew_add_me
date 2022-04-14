@@ -1,7 +1,7 @@
 import streamlit as st
-import snowflake.connector sf
+import snowflake.connector as sf
 
-streamlit.title('You are cordially invited to the Private Snowflake Exchange ACME-ADU')
+st.title('You are cordially invited to the Private Snowflake Exchange ACME-ADU')
 
 option = st.selectbox(
      'Run the command [SELECT CURRENT_REGION();] What is the result?',
