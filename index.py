@@ -5,15 +5,15 @@ from urllib.error import URLError
 def init_connection():
     return snowflake.connector.connect(**st.secrets["snowflake"])
 
-conn = init_connection()
+my_cnx = init_connection()
 
 def add_locator(query):
-    with conn.cursor() as cur:
+    my_cur = my_cnx.cursor()
         try:
-            result=cur.execute(query)
+            result=my_cur.execute(query)
         except URLError as e:
             st.error()
-        return result
+    return result
 
 def build_command(my_account_locator):
     alter_command=('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
