@@ -28,7 +28,7 @@ if st.button('Submit My Region'):
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
 else:
-     st.write('Please enter your Region')
+     st.write()
 
 
 
