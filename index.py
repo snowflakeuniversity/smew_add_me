@@ -4,7 +4,8 @@ import snowflake.connector
 
 
 st.title('You are cordially invited to...')
-st.header('The Private Snowflake Exchange ACME-ADU')
+st.header('The ACME-ADU Private Exchange')
+st.text('Powered by Snowflake')
  
 current_region_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_region_function.png"
 st.image(current_region_function)
