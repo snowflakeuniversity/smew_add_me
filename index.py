@@ -23,9 +23,7 @@ st.text('Powered by Snowflake')
 current_region_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_region_function.png"
 st.image(current_region_function)
 
-my_region = st.selectbox(
-     'What REGION do you see if you run the CURRENT_REGION function?',
-     ('<pick one>','AWS_CA_CENTRAL_1', 'Some other region.', 'Azure Canada Central'))
+st.text('Only accounts in the AWS Central Canada Region (as shown above) can be added to the ACME-ADU Private Exchange that Max and Lottie set up to share data with each other. If your account is in the correct region, submit your account locator below.')
 
 
  
