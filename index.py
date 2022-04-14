@@ -35,6 +35,8 @@ my_account_locator = st.text_input('What result do you get if you run the CURREN
 
 st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
+st.stop()
+
 if st.button('Add My Account to the ACME-ADU Exchange'):
      try:
         command_to_add_account = ('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
