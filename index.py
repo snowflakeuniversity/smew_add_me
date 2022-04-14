@@ -10,7 +10,7 @@ st.write('We can only add your account if it is in the same region as the exchan
   
 option = st.selectbox(
      'Run the command [SELECT CURRENT_REGION();] What is the result?',
-     ('AWS_CA_CENTRAL_1', 'Something that is not AWS and Canada Central')) 
+     ('<pick one>','AWS_CA_CENTRAL_1', 'Something that is not AWS and Canada Central')) 
 st.write('You selected:', option)
 
 
