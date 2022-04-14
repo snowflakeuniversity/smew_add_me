@@ -23,7 +23,7 @@ st.text('Powered by Snowflake')
 current_region_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_region_function.png"
 st.image(current_region_function)
 
-st.text('Only accounts in the AWS Central Canada Region (as shown above) can be added to the ACME-ADU Private Exchange that Max and Lottie set up to share data with each other. If your account is in the correct region, submit your account locator below.')
+st.markdown('Only accounts in the AWS Central Canada Region (as shown above) can be added to the ACME-ADU Private Exchange that Max and Lottie set up to share data with each other. If your account is in the correct region, submit your account locator below.')
 
 
  
