@@ -15,7 +15,7 @@ my_region = st.selectbox(
      ('<pick one>','AWS_CA_CENTRAL_1', 'Something other region.'))
 
 if st.button('Submit My Region'):
-     if my_region='AWS_CA_CENTRAL':
+     if my_region == 'AWS_CA_CENTRAL':
         st.write(my_region)
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
