@@ -9,10 +9,10 @@ my_cnx = init_connection()
 
 def add_locator(query):
     my_cur = my_cnx.cursor()
-        try:
-            result=my_cur.execute(query)
-        except URLError as e:
-            st.error()
+    try:
+      result=my_cur.execute(query)
+    except URLError as e:
+      st.error()
     return result
 
 def build_command(my_account_locator):
