@@ -1,9 +1,9 @@
 import streamlit as st
 import snowflake.connector 
 
-IMAGE_URL = "https://images.unsplash.com/photo-1548407260-da850faa41e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1487&q=80"
+current_account_function = "//learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 
-st.image(IMAGE_URL, caption="Sunrise by the mountains")
+st.image(current_account_function, caption="Find your account locator.")
 
 st.title('You are cordially invited to...')
 st.header('The Private Snowflake Exchange ACME-ADU')
