@@ -27,17 +27,8 @@ my_region = st.selectbox(
      'What REGION do you see if you run the CURRENT_REGION function?',
      ('<pick one>','AWS_CA_CENTRAL_1', 'Some other region.', 'Azure Canada Central'))
 
-if st.button('Submit My Region'):
-     if my_region == 'AWS_CA_CENTRAL_1':
-        #st.write(my_region)
-        current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
-        st.image(current_account_function)
-        my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
-      
-     else: 
-        st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
-else:
-     st.write()
+
+
 
   
 current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
@@ -45,11 +36,12 @@ st.image(current_account_function)
 
 my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
 
-st.write('Your Account Locator is ', my_account_locator)    
+st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
-if st.button('Add My Account to the Private Exchange'):
+if st.button('Looks Good'):
      build_command(my_account_locator)
+     st.write('COMMAND: '+ alter_command)
 else:
      st.write()
-st.write(alter_command)
+
 
