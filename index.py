@@ -1,6 +1,18 @@
 import streamlit as st
 import snowflake.connector 
 
+def init_connection():
+    return snowflake.connector.connect(**st.secrets["snowflake"])
+
+conn = init_connection()
+
+def add_locator(query):
+    with conn.cursor() as cur:
+        cur.execute(query)
+        return cur.fetchall()
+
+rows = run_query("SELECT * from mytable;")
+
 
 
 st.title('You are cordially invited to...')
@@ -23,8 +35,9 @@ if st.button('Submit My Region'):
         st.write('Your Account Locator is ', my_account_locator)    
         if st.button('Add My Account to the Private Exchange'):
           st.write('Thanks for submitting your Account Locator')
+          
         else:
-          st.write('Your Account Locator has an issue.')
+          st.write()
      else: 
         st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
 else:
