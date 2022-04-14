@@ -3,7 +3,7 @@ import snowflake.connector
 
 current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 
-st.image(current_account_function, caption="Find your account locator.")
+st.image(current_account_function)
 
 st.title('You are cordially invited to...')
 st.header('The Private Snowflake Exchange ACME-ADU')
