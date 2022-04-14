@@ -1,6 +1,6 @@
 import streamlit as st
 import snowflake.connector 
-
+from urllib.error import URLError 
 
 def init_connection():
     return snowflake.connector.connect(**st.secrets["snowflake"])
@@ -37,9 +37,12 @@ my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOU
 st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
 if st.button('Looks Good - Add Me'):
-     what_ran=build_command(my_account_locator)
-     what_really_ran=add_locator(what_ran)   
-     st.write('COMMAND: '+ what_really_ran)
+     try:
+        what_ran=build_command(my_account_locator)
+        what_really_ran=add_locator(what_ran)   
+        st.write('COMMAND: '+ what_really_ran)
+     except URLError as e:
+        st.error()
 else:
      st.write()
 
