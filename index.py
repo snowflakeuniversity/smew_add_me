@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector 
 
-alter_command ='You have not added your Account Locator, yet'
+
 def init_connection():
     return snowflake.connector.connect(**st.secrets["snowflake"])
 
@@ -28,9 +28,7 @@ my_region = st.selectbox(
      ('<pick one>','AWS_CA_CENTRAL_1', 'Some other region.', 'Azure Canada Central'))
 
 
-
-
-  
+ 
 current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 st.image(current_account_function)
 
@@ -38,7 +36,7 @@ my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOU
 
 st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.aws/'  +  my_account_locator + '/...')    
 
-if st.button('Looks Good'):
+if st.button('Looks Good - Add Me
      build_command(my_account_locator)
      st.write('COMMAND: '+ alter_command)
 else:
