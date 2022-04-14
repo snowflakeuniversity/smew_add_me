@@ -1,7 +1,8 @@
 import streamlit as st
 import snowflake.connector 
 
-st.title('You are cordially invited to the Private Snowflake Exchange ACME-ADU')
+st.title('You are cordially invited to...')
+st.header('The Private Snowflake Exchange ACME-ADU')
 
 
 st.write('Did you know Private Exchanges only exist on one Region/Cloud?') 
