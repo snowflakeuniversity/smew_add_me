@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector 
 
-current_account_function = "//learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
+current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 
 st.image(current_account_function, caption="Find your account locator.")
 
