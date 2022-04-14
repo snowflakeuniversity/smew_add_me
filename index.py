@@ -10,15 +10,22 @@ st.text('Powered by Snowflake')
 current_region_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_region_function.png"
 st.image(current_region_function)
 
-option = st.selectbox(
+my_region = st.selectbox(
      'What REGION do you see if you run the CURRENT_REGION function?',
      ('<pick one>','AWS_CA_CENTRAL_1', 'Something other region.'))
 
+if st.button('Submit My Region'):
+     if my_region='AWS_CA_CENTRAL':
+        st.write(my_region)
+     else: 
+        st.write('Sign up for a Snowflake Trial Account on AWS in the Canada Central Region, please')
+ else:
+     st.write('Goodbye')
 
 current_account_function = "https://learn.snowflake.com/asset-v1:snowflake+ESS-SMEW+C+type@asset+block@current_account_function.png"
 st.image(current_account_function)
-title = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
-st.write('Your Account Locator is ', title)
+my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
+st.write('Your Account Locator is ', my_account_locator)
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
