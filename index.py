@@ -40,7 +40,7 @@ if st.button('Looks Good - Add Me'):
      try:
         what_ran=build_command(my_account_locator)
         what_really_ran=add_locator(what_ran)   
-        st.write('COMMAND: '+ what_really_ran)
+        st.write(what_really_ran)
      except URLError as e:
         st.error()
 else:
