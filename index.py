@@ -7,17 +7,13 @@ def init_connection():
 
 my_cnx = init_connection()
 
-def add_locator(query):
+def snowflake_command(my_command):
     my_cur = my_cnx.cursor()
     try:
-      result=my_cur.execute(query)
+      result=my_cur.execute(my_command)
     except URLError as e:
       st.error()
     return result
-
-def build_command(my_account_locator):
-    alter_command=('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
-    return alter_command
 
 st.title('You are cordially invited to...')
 st.header('The ACME-ADU Private Exchange')
@@ -39,9 +35,9 @@ st.write('Does your URL start like this? https://app.snowflake.com/ca-central-1.
 
 if st.button('Looks Good - Add Me'):
      try:
-        what_ran=build_command(my_account_locator)
-        what_really_ran=add_locator(what_ran)   
-        st.write(what_really_ran)
+        command_to_add_account = ('ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1.' + my_account_locator)
+        my_result=snowflake_command(command_to_add_account)   
+        st.write(my_result)
      except URLError as e:
         st.error()
 else:
