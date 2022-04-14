@@ -13,7 +13,8 @@ option = st.selectbox(
      ('<pick one>','AWS_CA_CENTRAL_1', 'Something that is not AWS and Canada Central')) 
 st.write('You selected:', option)
 
-
+title = st.text_input('Your Account Locator', 'abc12345')
+st.write('Your Account Locator is ', title)
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
