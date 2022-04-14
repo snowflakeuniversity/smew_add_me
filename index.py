@@ -11,9 +11,6 @@ def add_locator(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("SELECT * from mytable;")
-
-
 
 st.title('You are cordially invited to...')
 st.header('The ACME-ADU Private Exchange')
@@ -34,8 +31,9 @@ if st.button('Submit My Region'):
         my_account_locator = st.text_input('What is listed if your run the CURRENT ACCOUNT function?', 'abc12345')
         st.write('Your Account Locator is ', my_account_locator)    
         if st.button('Add My Account to the Private Exchange'):
-          st.write('Thanks for submitting your Account Locator')
-          
+          add_me =("ALTER DATA EXCHANGE ACME_ADU ADD CONSUMERS = AWS_CA_CENTRAL_1." + my_account_locator)
+          snowflake_response=add_locator(add_me)
+          st.write(snowflake_response)
         else:
           st.write()
      else: 
@@ -45,9 +43,3 @@ else:
 
 
 
-my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_data_row = my_cur.fetchone()
-#st.text("Hello from Snowflake:")
-#st.text(my_data_row)
