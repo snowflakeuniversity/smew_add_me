@@ -1,6 +1,11 @@
 import streamlit as st
 import snowflake.connector 
 
+from PIL import Image
+image = Image.open('sunrise.jpg')
+
+st.image(image, caption='Sunrise by the mountains')
+
 st.title('You are cordially invited to...')
 st.header('The Private Snowflake Exchange ACME-ADU')
 
