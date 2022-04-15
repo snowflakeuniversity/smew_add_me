@@ -41,7 +41,7 @@ if st.button('Add My Account to the ACME-ADU Exchange'):
      try:
         command_to_add_account = ('CALL STREAMLIT_INPUT.ST_FORM_DATA.SP_ADD_AL_TO_ACME_ADU(\''+ my_account_locator+'\')')
         st.write(command_to_add_account)
-        #my_result=snowflake_command(command_to_add_account)   
+        my_result=snowflake_command(command_to_add_account)   
      except URLError as e:
         st.error()
 else:
